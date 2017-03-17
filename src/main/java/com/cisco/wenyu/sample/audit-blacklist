@@ -1,0 +1,2 @@
+user:dont-audit-this-user-unless-whitelist-match
+ks:dont-audit-this-keyspace-unless-whitelist-match

@@ -1,0 +1,39 @@
+# host server
+host:/171.69.243.96
+
+# source server who send the operation request
+source:/171.69.243.99:54627
+
+# which user does the operation
+user:system
+
+# Operation Category
+# QUERY – all SELECT operations
+# DML – all INSERT, UPDATE, and DELETE actions
+# DDL – all object creations, modifications, and drops
+# DCL – all user creations, drops, list users and security privilege grants/revokes
+# AUTH – login events
+# ADMIN – audits various admin commands such as describe schema versions, cluster name, version, ring, etc.
+# ALL – audits DDL, DML, queries and errors
+category:DML
+
+# Operation Type:
+# SET_KS
+# CQL_SELECT
+# DROP_CF
+# CQL_UPDATE
+# TRUNCATE
+# CQL_DELETE
+# UPDATE_CF
+# CREATE_USER
+# UNAUTHORIZED_ATTEMPT
+# DROP_USER
+type:SET_KS
+
+# Keyspaces name which operation is based on
+ks:OpsCenter
+
+# Detail operation cql statements
+# It is not recommended to specify operation directly in white-list or black-list files. 
+# Or to specify the exact statement you want to filter.
+operation:SELECT schema_version FROM system.local WHERE key='local'
